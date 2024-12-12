@@ -28,4 +28,13 @@ const postPredictHandler = async (request, h) => {
     .code(201);
 };
 
-module.exports = { postPredictHandler };
+const getPredictHistoriesHandler = async (request, h) => {
+  const allData = await getData();
+
+  return h.response({
+    status: 'success',
+    data: allData,
+  }).code(200);
+}
+
+module.exports = { postPredictHandler, getPredictHistoriesHandler };
